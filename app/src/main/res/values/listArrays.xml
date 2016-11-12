@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="car_list">
+        <item>Hyundai</item>
+        <item>Volvo</item>
+        <item>Bmw</item>
+        <item>Mercedes</item>
+        <item>Hyundai</item>
+        <item>Volvo</item>
+        <item>Bmw</item>
+        <item>Mercedes</item>
+        <item>Hyundai</item>
+        <item>Volvo</item>
+        <item>Bmw</item>
+        <item>Mercedes</item>
+        <item>Hyundai</item>
+        <item>Volvo</item>
+        <item>Bmw</item>
+        <item>Mercedes</item>
+    </string-array>
+
+</resources>

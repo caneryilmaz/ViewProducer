@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_accessibility"
+        android:icon="@drawable/ic_action_action_accessibility"
+        android:title="Compose"
+        app:showAsAction="always|withText"></item>
+    <item
+        android:id="@+id/item_child"
+        android:icon="@drawable/ic_action_action_account_child"
+        android:title="Profile"
+        app:showAsAction="always|withText"></item>
+    <item
+        android:id="@+id/item_balance"
+        android:icon="@drawable/ic_action_action_account_balance"
+        android:title="Profile"
+        app:showAsAction="always|withText"></item>
+</menu>
