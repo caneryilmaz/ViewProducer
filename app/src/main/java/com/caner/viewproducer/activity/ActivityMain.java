@@ -1,5 +1,6 @@
-package com.caner.viewproducer;
+package com.caner.viewproducer.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,8 +9,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
-public class MainActivity extends BaseActivity {
-    protected ArrayAdapter<String> mAadapter;
+import com.caner.viewproducer.R;
+import com.caner.viewproducer.utils.BaseActivity;
+
+public class ActivityMain extends BaseActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -17,27 +20,20 @@ public class MainActivity extends BaseActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
-
-        final String[] mCarList = getResources().getStringArray(R.array.car_list);
-        mAadapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mCarList);
-        mList.setAdapter(mAadapter);
-
-        mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                toaster(mCarList[i]);
-
-            }
-        });
 
     }
 
     @Override
-    public int setLayout() {
-        return R.layout.activity_main;
+    protected void onResume() {
+        super.onResume();
+        mToolbar.setTitle("Rent a Car");
     }
+
+    @Override
+    public int setLayout() {
+        return R.layout.layout_activity_main;
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -50,7 +46,7 @@ public class MainActivity extends BaseActivity {
 
         switch (item.getItemId()) {
             case R.id.item_accessibility:
-                toaster("item_accessibility");
+                startActivity(new Intent(this, ActivityHome.class));
                 return true;
             case R.id.item_child:
                 toaster("item_child");
