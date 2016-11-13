@@ -1,9 +1,7 @@
 package com.caner.viewproducer.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.NavigationView;
-import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.caner.viewproducer.R;
@@ -14,22 +12,13 @@ import com.caner.viewproducer.utils.BaseActivity;
  */
 
 public class ActivityHome extends BaseActivity {
-    private CollapsingToolbarLayout mCollToolbar;
+    private Toolbar mToolbar;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-
-        mCollToolbar=(CollapsingToolbarLayout)findViewById(R.id.collapse_toolbar);
+        bindViews();
 
     }
 
@@ -41,7 +30,18 @@ public class ActivityHome extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        mToolbar.setTitle("Rent a Harley");
     }
 
+    private void bindViews() {
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    }
 }

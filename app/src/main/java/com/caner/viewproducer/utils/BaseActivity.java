@@ -17,7 +17,6 @@ import com.caner.viewproducer.R;
 
 public abstract class BaseActivity extends AppCompatActivity {
     public ListView mList;
-    public Toolbar mToolbar;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,10 +24,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(setLayout());
 
         mList = (ListView) findViewById(R.id.listview_cars);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        mToolbar.setTitleTextColor(ContextCompat.getColor(this,android.R.color.white));
-        setSupportActionBar(mToolbar);
 
         final String[] mCarList = getResources().getStringArray(R.array.car_list);
         ArrayAdapter<String> mAadapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mCarList);
