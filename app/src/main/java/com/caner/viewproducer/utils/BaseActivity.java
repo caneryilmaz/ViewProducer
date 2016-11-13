@@ -3,6 +3,7 @@ package com.caner.viewproducer.utils;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ArrayAdapter;
@@ -25,6 +26,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         mList = (ListView) findViewById(R.id.listview_cars);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        mToolbar.setTitleTextColor(ContextCompat.getColor(this,android.R.color.white));
         setSupportActionBar(mToolbar);
 
         final String[] mCarList = getResources().getStringArray(R.array.car_list);

@@ -1,7 +1,9 @@
 package com.caner.viewproducer.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 
 import com.caner.viewproducer.R;
@@ -12,7 +14,7 @@ import com.caner.viewproducer.utils.BaseActivity;
  */
 
 public class ActivityHome extends BaseActivity {
-
+    private CollapsingToolbarLayout mCollToolbar;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +28,9 @@ public class ActivityHome extends BaseActivity {
                 finish();
             }
         });
+
+        mCollToolbar=(CollapsingToolbarLayout)findViewById(R.id.collapse_toolbar);
+
     }
 
     @Override
